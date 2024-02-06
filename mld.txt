@@ -1,0 +1,20 @@
+Utilisateur
+(utilisateurId (PK), email, mot_de_passe)
+
+Etudiant
+(etudiantId (PK, FK vers Utilisateur), nom, prenom, sessionId (FK vers Session))
+
+Formateur
+(formateurId (PK, FK vers Utilisateur), nom, prenom)
+
+Session
+(sessionId (PK), nom_session, date_debut, date_fin)
+
+Cours
+(coursId (PK), nom_cours, sessionId (FK vers Session))
+
+Evaluation
+(evaluationId (PK), type_evaluation, coursId (FK vers Cours), formateurId (FK vers Formateur))
+
+Note
+(noteId (PK), note, evaluationId (FK vers Evaluation), etudiantId (FK vers Etudiant))
